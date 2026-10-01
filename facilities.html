@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facilities | ZP Upper Primary School Yerla, Maharashtra</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+    </style>
+</head>
+<body class="bg-amber-50/20 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col font-sans transition-colors duration-300 antialiased text-base leading-relaxed">
+
+    <!-- TOP ANNOUNCEMENT / LANGUAGE BAR -->
+    <div class="bg-gradient-to-r from-orange-600 via-pink-600 to-indigo-600 text-white px-4 py-2 shadow-sm">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm font-extrabold">
+            <div class="flex items-center space-x-2">
+                <span data-i18n="top_govt">Govt. of Maharashtra - Zilla Parishad Education Department</span>
+            </div>
+            
+            <!-- Language Switcher Buttons (EN / MR / HI) -->
+            <div class="flex items-center space-x-1.5 bg-slate-900/40 backdrop-blur-md p-1 rounded-xl border border-white/20">
+                <span class="text-xs text-yellow-300 font-bold px-1.5 hidden sm:inline" data-i18n="select_lang">Language:</span>
+                <button type="button" data-lang="en" class="lang-btn px-3 py-1 rounded-lg text-xs font-black transition-all bg-white text-slate-900 shadow">English</button>
+                <button type="button" data-lang="mr" class="lang-btn px-3 py-1 rounded-lg text-xs font-black transition-all hover:bg-white/20 text-white">मराठी</button>
+                <button type="button" data-lang="hi" class="lang-btn px-3 py-1 rounded-lg text-xs font-black transition-all hover:bg-white/20 text-white">हिंदी</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER / NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl shadow-sm border-b border-slate-200/80 dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 sm:h-24">
+                
+                <!-- School Name / Logo Brand -->
+                <a href="index.html" class="flex items-center space-x-3.5 group focus:outline-none">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-amber-500 via-orange-600 to-red-600 flex items-center justify-center text-white font-black text-xl sm:text-2xl shadow-md ring-4 ring-orange-100 dark:ring-orange-950 group-hover:scale-105 transition-transform duration-300">
+                        ZP
+                    </div>
+                    <div>
+                        <h1 data-i18n="school_name" class="text-lg sm:text-xl font-black tracking-tight text-slate-950 dark:text-white leading-tight group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">
+                            ZP UPPER PRIMARY SCHOOL
+                        </h1>
+                        <div class="flex items-center space-x-2 mt-0.5">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                            <p data-i18n="school_location_tag" class="text-xs font-extrabold text-emerald-600 dark:text-emerald-400 tracking-wider uppercase">
+                                YERLA, MAHARASHTRA
+                            </p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-2 text-sm sm:text-base font-extrabold">
+                    <a href="index.html" data-i18n="nav_home" class="px-4 py-2.5 rounded-xl text-slate-800 dark:text-slate-200 hover:bg-orange-100 dark:hover:bg-slate-800 hover:text-orange-700 dark:hover:text-amber-300 transition-all">Home</a>
+                    <a href="aboutus.html" data-i18n="nav_about" class="px-4 py-2.5 rounded-xl text-slate-800 dark:text-slate-200 hover:bg-orange-100 dark:hover:bg-slate-800 hover:text-orange-700 dark:hover:text-amber-300 transition-all">About Us</a>
+                    <a href="facilities.html" data-i18n="nav_facilities" class="px-4 py-2.5 rounded-xl bg-orange-500 text-white dark:bg-orange-600 shadow-md font-black">Facilities</a>
+                    <a href="contactus.html" data-i18n="nav_contact" class="px-4 py-2.5 rounded-xl text-slate-800 dark:text-slate-200 hover:bg-orange-100 dark:hover:bg-slate-800 hover:text-orange-700 dark:hover:text-amber-300 transition-all">Contact Us</a>
+                    <a href="gallery.html" data-i18n="nav_gallery" class="px-4 py-2.5 rounded-xl text-slate-800 dark:text-slate-200 hover:bg-orange-100 dark:hover:bg-slate-800 hover:text-orange-700 dark:hover:text-amber-300 transition-all">Gallery</a>
+                </nav>
+
+                <!-- Actions: Dark/Light Mode Toggle & Mobile Menu -->
+                <div class="flex items-center space-x-3">
+                    <button id="themeToggle" type="button" aria-label="Toggle theme" class="p-2.5 sm:p-3 rounded-2xl bg-amber-100 dark:bg-slate-800 text-slate-900 dark:text-amber-300 hover:bg-amber-200 dark:hover:bg-slate-700 transition-all transform hover:scale-105 active:scale-95 focus:outline-none ring-1 ring-amber-200 dark:ring-slate-700 shadow-sm">
+                        <svg id="sunIcon" class="w-5 h-5 sm:w-6 sm:h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                        <svg id="moonIcon" class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+
+                    <button id="mobileMenuBtn" type="button" class="lg:hidden p-2.5 sm:p-3 rounded-2xl bg-amber-100 dark:bg-slate-800 text-slate-900 dark:text-slate-200 hover:bg-amber-200 dark:hover:bg-slate-700 focus:outline-none ring-1 ring-amber-200 dark:ring-slate-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden border-t border-slate-200 dark:border-slate-800 bg-amber-50 dark:bg-slate-900 px-5 pt-4 pb-6 space-y-2 text-base font-black shadow-xl">
+            <a href="index.html" data-i18n="nav_home" class="block px-4 py-3 rounded-xl text-slate-900 dark:text-slate-100 hover:bg-orange-100 dark:hover:bg-slate-800">Home</a>
+            <a href="aboutus.html" data-i18n="nav_about" class="block px-4 py-3 rounded-xl text-slate-900 dark:text-slate-100 hover:bg-orange-100 dark:hover:bg-slate-800">About Us</a>
+            <a href="facilities.html" data-i18n="nav_facilities" class="block px-4 py-3 rounded-xl bg-orange-500 text-white font-black">Facilities</a>
+            <a href="contactus.html" data-i18n="nav_contact" class="block px-4 py-3 rounded-xl text-slate-900 dark:text-slate-100 hover:bg-orange-100 dark:hover:bg-slate-800">Contact Us</a>
+            <a href="gallery.html" data-i18n="nav_gallery" class="block px-4 py-3 rounded-xl text-slate-900 dark:text-slate-100 hover:bg-orange-100 dark:hover:bg-slate-800">Gallery</a>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER WITH AIRY SPACING -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-16 sm:space-y-24">
+
+        <!-- MINIMAL & BREATHABLE HERO BANNER -->
+        <section class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-slate-900 via-orange-950 to-slate-950 p-8 sm:p-14 text-white text-center shadow-xl border border-white/10">
+            <div class="relative z-10 max-w-2xl mx-auto space-y-4">
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-orange-600/80 backdrop-blur-md text-white text-xs font-black uppercase tracking-wider rounded-full shadow">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                    <span data-i18n="fac_hero_badge">Campus Infrastructure</span>
+                </span>
+
+                <h2 data-i18n="fac_hero_title" class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
+                    Modern, Safe & Inspiring Facilities
+                </h2>
+
+                <p data-i18n="fac_hero_sub" class="text-amber-100/90 text-base sm:text-lg font-medium leading-relaxed max-w-xl mx-auto">
+                    Discover the key campus facilities providing a safe, digital, and healthy environment for every child.
+                </p>
+            </div>
+        </section>
+
+        <!-- CLEAN CATEGORY FILTER TABS -->
+        <section class="flex flex-wrap items-center justify-center gap-2.5">
+            <button type="button" data-filter="all" class="fac-filter-btn px-5 py-2 rounded-full font-black text-xs sm:text-sm transition-all shadow bg-orange-600 text-white" data-i18n="fac_filter_all">All Facilities</button>
+            <button type="button" data-filter="safety" class="fac-filter-btn px-5 py-2 rounded-full font-bold text-xs sm:text-sm transition-all bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-orange-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800" data-i18n="fac_filter_safety">Safety & Infra</button>
+            <button type="button" data-filter="digital" class="fac-filter-btn px-5 py-2 rounded-full font-bold text-xs sm:text-sm transition-all bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-orange-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800" data-i18n="fac_filter_digital">Digital Learning</button>
+            <button type="button" data-filter="outdoor" class="fac-filter-btn px-5 py-2 rounded-full font-bold text-xs sm:text-sm transition-all bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-orange-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800" data-i18n="fac_filter_outdoor">Outdoor & Sports</button>
+            <button type="button" data-filter="health" class="fac-filter-btn px-5 py-2 rounded-full font-bold text-xs sm:text-sm transition-all bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-orange-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800" data-i18n="fac_filter_health">Water & Health</button>
+        </section>
+
+        <!-- 6 FACILITIES SHOWCASE GRID (SPACIOUS & LESS DENSE) -->
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+            
+            <!-- FACILITY 1: CCTV SECURITY -->
+            <article data-category="safety" class="facility-card flex flex-col bg-white dark:bg-slate-900 rounded-[2rem] overflow-hidden shadow-lg border border-slate-200/70 dark:border-slate-800/80 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                <div class="relative h-56 overflow-hidden bg-slate-950 shrink-0">
+                    <img src="images/CCTV.jpg" alt="24/7 CCTV Security" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+                    <span data-i18n="fac1_badge" class="absolute top-4 left-4 px-3.5 py-1 bg-red-600/90 backdrop-blur-md text-white text-xs font-black rounded-full uppercase tracking-wider shadow">
+                        Security & Safety
+                    </span>
+                </div>
+                <div class="p-7 flex-grow flex flex-col justify-between space-y-5">
+                    <div class="space-y-2.5">
+                        <h3 data-i18n="fac1_title" class="text-xl font-black text-slate-900 dark:text-white tracking-tight group-hover:text-orange-600 transition-colors">
+                            24/7 CCTV Camera Security
+                        </h3>
+                        <p data-i18n="fac1_desc" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            High-definition 24/7 CCTV cameras monitor gates, corridors, and classrooms to ensure complete child safety and peace of mind.
+                        </p>
+                    </div>
+
+
+
+                    <button type="button" class="view-facility-modal w-full py-2.5 px-4 rounded-xl bg-orange-50 dark:bg-slate-800 text-orange-700 dark:text-orange-300 font-extrabold hover:bg-orange-600 hover:text-white dark:hover:bg-orange-600 dark:hover:text-white transition-all text-sm flex items-center justify-center space-x-2">
+                        <span data-i18n="fac_btn_view">View Details</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </button>
+                </div>
+            </article>
+
+            <!-- FACILITY 2: GOOD TRANSPORTATION ROADS -->
+            <article data-category="safety" class="facility-card flex flex-col bg-white dark:bg-slate-900 rounded-[2rem] overflow-hidden shadow-lg border border-slate-200/70 dark:border-slate-800/80 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                <div class="relative h-56 overflow-hidden bg-slate-950 shrink-0">
+                    <img src="images/road1.jpg" alt="Good Transportation Roads" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+                    <span data-i18n="fac2_badge" class="absolute top-4 left-4 px-3.5 py-1 bg-indigo-600/90 backdrop-blur-md text-white text-xs font-black rounded-full uppercase tracking-wider shadow">
+                        Accessibility & Roads
+                    </span>
+                </div>
+                <div class="p-7 flex-grow flex flex-col justify-between space-y-5">
+                    <div class="space-y-2.5">
+                        <h3 data-i18n="fac2_title" class="text-xl font-black text-slate-900 dark:text-white tracking-tight group-hover:text-orange-600 transition-colors">
+                            Good Transportation Roads
+                        </h3>
+                        <p data-i18n="fac2_desc" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Wide, paved asphalt roads connect Yerla village directly to main highway corridors for easy, safe daily commuting.
+                        </p>
+                    </div>
+
+
+
+                    <button type="button" class="view-facility-modal w-full py-2.5 px-4 rounded-xl bg-orange-50 dark:bg-slate-800 text-orange-700 dark:text-orange-300 font-extrabold hover:bg-orange-600 hover:text-white dark:hover:bg-orange-600 dark:hover:text-white transition-all text-sm flex items-center justify-center space-x-2">
+                        <span data-i18n="fac_btn_view">View Details</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </button>
+                </div>
+            </article>
+
+            <!-- FACILITY 3: DIGITAL TV IN CLASS -->
+            <article data-category="digital" class="facility-card flex flex-col bg-white dark:bg-slate-900 rounded-[2rem] overflow-hidden shadow-lg border border-slate-200/70 dark:border-slate-800/80 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                <div class="relative h-56 overflow-hidden bg-slate-950 shrink-0">
+                    <img src="images/tv.jpg" alt="Digital TV Smart Classrooms" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+                    <span data-i18n="fac3_badge" class="absolute top-4 left-4 px-3.5 py-1 bg-blue-600/90 backdrop-blur-md text-white text-xs font-black rounded-full uppercase tracking-wider shadow">
+                        Smart Education
+                    </span>
+                </div>
+                <div class="p-7 flex-grow flex flex-col justify-between space-y-5">
+                    <div class="space-y-2.5">
+                        <h3 data-i18n="fac3_title" class="text-xl font-black text-slate-900 dark:text-white tracking-tight group-hover:text-orange-600 transition-colors">
+                            Digital TV in Classrooms
+                        </h3>
+                        <p data-i18n="fac3_desc" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Interactive Smart TVs in classrooms bring lessons to life with educational videos and animated visual learning modules.
+                        </p>
+                    </div>
+
+
+
+                    <button type="button" class="view-facility-modal w-full py-2.5 px-4 rounded-xl bg-orange-50 dark:bg-slate-800 text-orange-700 dark:text-orange-300 font-extrabold hover:bg-orange-600 hover:text-white dark:hover:bg-orange-600 dark:hover:text-white transition-all text-sm flex items-center justify-center space-x-2">
+                        <span data-i18n="fac_btn_view">View Details</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </button>
+                </div>
+            </article>
+
+            <!-- FACILITY 4: OPEN CLASSROOM -->
+            <article data-category="outdoor" class="facility-card flex flex-col bg-white dark:bg-slate-900 rounded-[2rem] overflow-hidden shadow-lg border border-slate-200/70 dark:border-slate-800/80 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                <div class="relative h-56 overflow-hidden bg-slate-950 shrink-0">
+                    <img src="images/openclassroom.jpg" alt="Open-Air Eco Classrooms" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+                    <span data-i18n="fac4_badge" class="absolute top-4 left-4 px-3.5 py-1 bg-emerald-600/90 backdrop-blur-md text-white text-xs font-black rounded-full uppercase tracking-wider shadow">
+                        Eco Learning
+                    </span>
+                </div>
+                <div class="p-7 flex-grow flex flex-col justify-between space-y-5">
+                    <div class="space-y-2.5">
+                        <h3 data-i18n="fac4_title" class="text-xl font-black text-slate-900 dark:text-white tracking-tight group-hover:text-orange-600 transition-colors">
+                            Open-Air Eco Classrooms
+                        </h3>
+                        <p data-i18n="fac4_desc" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Shady tree-filled open classrooms offer fresh air for interactive group discussions, storytelling, and practical nature study.
+                        </p>
+                    </div>
+
+
+
+                    <button type="button" class="view-facility-modal w-full py-2.5 px-4 rounded-xl bg-orange-50 dark:bg-slate-800 text-orange-700 dark:text-orange-300 font-extrabold hover:bg-orange-600 hover:text-white dark:hover:bg-orange-600 dark:hover:text-white transition-all text-sm flex items-center justify-center space-x-2">
+                        <span data-i18n="fac_btn_view">View Details</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </button>
+                </div>
+            </article>
+
+            <!-- FACILITY 5: HUGE PLAYGROUND -->
+            <article data-category="outdoor" class="facility-card flex flex-col bg-white dark:bg-slate-900 rounded-[2rem] overflow-hidden shadow-lg border border-slate-200/70 dark:border-slate-800/80 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                <div class="relative h-56 overflow-hidden bg-slate-950 shrink-0">
+                    <img src="images/playground.jpg" alt="Huge Sports Playground" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+                    <span data-i18n="fac5_badge" class="absolute top-4 left-4 px-3.5 py-1 bg-amber-600/90 backdrop-blur-md text-white text-xs font-black rounded-full uppercase tracking-wider shadow">
+                        Sports & Fitness
+                    </span>
+                </div>
+                <div class="p-7 flex-grow flex flex-col justify-between space-y-5">
+                    <div class="space-y-2.5">
+                        <h3 data-i18n="fac5_title" class="text-xl font-black text-slate-900 dark:text-white tracking-tight group-hover:text-orange-600 transition-colors">
+                            Huge Sports Playground
+                        </h3>
+                        <p data-i18n="fac5_desc" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            A spacious open playground dedicated to Kho-Kho, Kabaddi, Volleyball, athletics, and morning fitness drills.
+                        </p>
+                    </div>
+
+
+
+                    <button type="button" class="view-facility-modal w-full py-2.5 px-4 rounded-xl bg-orange-50 dark:bg-slate-800 text-orange-700 dark:text-orange-300 font-extrabold hover:bg-orange-600 hover:text-white dark:hover:bg-orange-600 dark:hover:text-white transition-all text-sm flex items-center justify-center space-x-2">
+                        <span data-i18n="fac_btn_view">View Details</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </button>
+                </div>
+            </article>
+
+            <!-- FACILITY 6: 24 HR WATER SUPPLY -->
+            <article data-category="health" class="facility-card flex flex-col bg-white dark:bg-slate-900 rounded-[2rem] overflow-hidden shadow-lg border border-slate-200/70 dark:border-slate-800/80 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                <div class="relative h-56 overflow-hidden bg-slate-950 shrink-0">
+                    <img src="images/watertank.jpg" alt="24 Hr Water Supply Tank" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+                    <span data-i18n="fac6_badge" class="absolute top-4 left-4 px-3.5 py-1 bg-cyan-600/90 backdrop-blur-md text-white text-xs font-black rounded-full uppercase tracking-wider shadow">
+                        Health & Hygiene
+                    </span>
+                </div>
+                <div class="p-7 flex-grow flex flex-col justify-between space-y-5">
+                    <div class="space-y-2.5">
+                        <h3 data-i18n="fac6_title" class="text-xl font-black text-slate-900 dark:text-white tracking-tight group-hover:text-orange-600 transition-colors">
+                            24-Hour Pure Water Supply
+                        </h3>
+                        <p data-i18n="fac6_desc" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Overhead water storage tank and filtration system providing continuous purified drinking water and hygienic washrooms.
+                        </p>
+                    </div>
+
+
+
+                    <button type="button" class="view-facility-modal w-full py-2.5 px-4 rounded-xl bg-orange-50 dark:bg-slate-800 text-orange-700 dark:text-orange-300 font-extrabold hover:bg-orange-600 hover:text-white dark:hover:bg-orange-600 dark:hover:text-white transition-all text-sm flex items-center justify-center space-x-2">
+                        <span data-i18n="fac_btn_view">View Details</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </button>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- CLEAN & AIRY HIGHLIGHTS GRID (REPLACES HEAVY DENSE TABLE) -->
+        <section class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-[2rem] p-8 sm:p-12 shadow-lg border border-slate-200/80 dark:border-slate-800 space-y-8">
+            <div class="text-center max-w-xl mx-auto space-y-2">
+                <h3 data-i18n="fac_table_title" class="text-2xl font-black text-slate-950 dark:text-white tracking-tight">
+                    Facility Highlights
+                </h3>
+                <p data-i18n="fac_table_sub" class="text-sm font-bold text-slate-500 dark:text-slate-400">
+                    Essential infrastructure standards at Z.P. Upper Primary School Yerla
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <div class="p-5 rounded-2xl bg-amber-50/50 dark:bg-slate-800/40 border border-amber-200/50 dark:border-slate-700/50 flex items-start gap-4">
+                    <div class="p-2.5 rounded-xl bg-red-500/10 text-red-600 dark:text-red-400 shrink-0 font-black">
+                        CCTV
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-black text-sm text-slate-900 dark:text-white">24/7 CCTV Security</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 font-semibold">Active & HD Monitored</p>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-amber-50/50 dark:bg-slate-800/40 border border-amber-200/50 dark:border-slate-700/50 flex items-start gap-4">
+                    <div class="p-2.5 rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 shrink-0 font-black">
+                        ROAD
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-black text-sm text-slate-900 dark:text-white">Paved Asphalt Roads</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 font-semibold">All-Weather Easy Access</p>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-amber-50/50 dark:bg-slate-800/40 border border-amber-200/50 dark:border-slate-700/50 flex items-start gap-4">
+                    <div class="p-2.5 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 shrink-0 font-black">
+                        SMART
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-black text-sm text-slate-900 dark:text-white">Digital TV Classes</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 font-semibold">Interactive Video Modules</p>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-amber-50/50 dark:bg-slate-800/40 border border-amber-200/50 dark:border-slate-700/50 flex items-start gap-4">
+                    <div class="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 shrink-0 font-black">
+                        ECO
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-black text-sm text-slate-900 dark:text-white">Open Classrooms</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 font-semibold">Outdoor Nature Learning</p>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-amber-50/50 dark:bg-slate-800/40 border border-amber-200/50 dark:border-slate-700/50 flex items-start gap-4">
+                    <div class="p-2.5 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 shrink-0 font-black">
+                        SPORT
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-black text-sm text-slate-900 dark:text-white">Huge Playground</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 font-semibold">Kho-Kho & Kabaddi Turf</p>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-amber-50/50 dark:bg-slate-800/40 border border-amber-200/50 dark:border-slate-700/50 flex items-start gap-4">
+                    <div class="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 shrink-0 font-black">
+                        WATER
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-black text-sm text-slate-900 dark:text-white">24/7 Pure Water</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 font-semibold">Storage Tank & Filter</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION (CTA) SECTION -->
+        <section class="rounded-[2rem] bg-gradient-to-r from-orange-600 via-pink-600 to-indigo-600 text-white p-8 sm:p-12 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="space-y-2 text-center md:text-left max-w-xl">
+                <h3 data-i18n="fac_cta_title" class="text-2xl sm:text-3xl font-black tracking-tight">
+                    Experience Our School Campus
+                </h3>
+                <p data-i18n="fac_cta_sub" class="text-amber-100 text-sm sm:text-base font-bold">
+                    Visit Z.P. Upper Primary School Yerla or get directions to see our facilities firsthand.
+                </p>
+            </div>
+            <div class="flex flex-wrap items-center justify-center gap-3 shrink-0">
+                <a href="contactus.html" data-i18n="fac_cta_btn1" class="px-5 py-3 rounded-xl bg-white text-slate-900 font-black hover:bg-amber-100 transition-all text-sm shadow">
+                    Contact School Office
+                </a>
+                <a href="https://maps.google.com/?q=Yerla+Nagpur" target="_blank" data-i18n="fac_cta_btn2" class="px-5 py-3 rounded-xl bg-slate-900/40 backdrop-blur-md border border-white/30 text-white font-black hover:bg-white/20 transition-all text-sm shadow">
+                    Get Directions on Google Maps
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- LIGHTBOX MODAL FOR FACILITY SPECIFICATIONS -->
+    <div id="facilityModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 transition-all duration-300">
+        <div id="modalBackdrop" class="absolute inset-0 bg-slate-950/75 backdrop-blur-md"></div>
+
+        <div class="relative z-10 w-full max-w-2xl bg-white dark:bg-slate-900 rounded-[2rem] overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
+            <div class="relative h-60 sm:h-72 overflow-hidden bg-slate-950">
+                <img id="modalImage" src="" alt="Facility Detail View" class="w-full h-full object-cover" />
+                <button id="modalCloseBtn" type="button" class="absolute top-4 right-4 p-2.5 rounded-full bg-slate-900/80 text-white hover:bg-orange-600 transition-all focus:outline-none shadow">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+                <span id="modalBadge" class="absolute bottom-4 left-4 px-3.5 py-1 bg-orange-600 text-white text-xs font-black rounded-full uppercase tracking-wider shadow">
+                    Facility Details
+                </span>
+            </div>
+
+            <div class="p-6 sm:p-8 space-y-4 max-h-[50vh] overflow-y-auto">
+                <div class="space-y-1">
+                    <h3 id="modalTitle" class="text-xl sm:text-2xl font-black text-slate-950 dark:text-white tracking-tight">
+                        Facility Title
+                    </h3>
+                    <p id="modalSub" class="text-xs sm:text-sm font-bold text-orange-600 dark:text-amber-400">
+                        Facility Subtitle
+                    </p>
+                </div>
+
+                <p id="modalDesc" class="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed">
+                    Facility Detailed Description will be loaded dynamically here.
+                </p>
+
+                <div class="pt-4 flex justify-end">
+                    <button type="button" onclick="document.getElementById('modalCloseBtn').click()" data-i18n="fac_modal_close" class="px-5 py-2.5 rounded-xl bg-orange-600 text-white font-black hover:bg-orange-700 transition-all text-sm shadow">
+                        Close Window
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-400 border-t border-slate-800 mt-16 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- School Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white font-black text-xl shadow-md">
+                            ZP
+                        </div>
+                        <div>
+                            <h4 data-i18n="footer_school_title" class="text-lg font-black text-white leading-tight">Z.P. Upper Primary School</h4>
+                            <p data-i18n="footer_school_sub" class="text-xs text-orange-400 font-bold tracking-wider">Yerla, Maharashtra</p>
+                        </div>
+                    </div>
+                    <p data-i18n="footer_about_text" class="text-sm leading-relaxed font-normal">
+                        Dedicated to providing quality primary education with smart digital classrooms, safe campus facilities, and sports activities.
+                    </p>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="space-y-4">
+                    <h4 data-i18n="footer_nav_heading" class="text-base font-black text-white tracking-wider uppercase">Quick Navigation</h4>
+                    <ul class="space-y-2 text-sm font-extrabold">
+                        <li><a href="index.html" data-i18n="nav_home" class="hover:text-orange-400 transition-colors">Home</a></li>
+                        <li><a href="aboutus.html" data-i18n="nav_about" class="hover:text-orange-400 transition-colors">About Us</a></li>
+                        <li><a href="facilities.html" data-i18n="nav_facilities" class="hover:text-orange-400 transition-colors">Facilities</a></li>
+                        <li><a href="contactus.html" data-i18n="nav_contact" class="hover:text-orange-400 transition-colors">Contact Us</a></li>
+                        <li><a href="gallery.html" data-i18n="nav_gallery" class="hover:text-orange-400 transition-colors">Gallery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Location Info -->
+                <div class="space-y-4">
+                    <h4 data-i18n="footer_contact_heading" class="text-base font-black text-white tracking-wider uppercase">Contact Details</h4>
+                    <ul class="space-y-3 text-sm font-semibold">
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-orange-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            <span data-i18n="footer_address">At Post Yerla, Kalameshwar, Nagpur, MH 441501</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-orange-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <span data-i18n="footer_hours">Mon - Sat: 10:30 AM - 5:00 PM</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-orange-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            <a href="tel:+919096108602" class="hover:text-amber-400 transition-colors">
+                                <span data-i18n="footer_phone">+91 90961 08602 (K.R. Mondekar)</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="border-t border-slate-900 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs font-semibold gap-4 text-center">
+                <p data-i18n="copyright_text">© ZP Upper Primary School Yerla, Maharashtra. All Rights Reserved.</p>
+                <p data-i18n="copyright_sub" class="text-slate-400">Government of Maharashtra - Zilla Parishad Education Department</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT INCLUSION -->
+    <script src="script.js"></script>
+</body>
+</html>
